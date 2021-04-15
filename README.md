@@ -135,8 +135,23 @@ CS인터뷰를 준비하는데 도움이 되기를 바랍니다.
 <details>
   <summary>HTTP와 HTTPS의 차이점에 대해서 설명해보세요.</summary>
   </br>
-
+  HTTP는 평문 데이터를 전송하는 프로토콜이고, 이러한 과정에서 제3자가 패킷을 탈취할 경우, <br>
+  패킷 안에 있는 정보를 볼 수 있습니다. HTTPS는 HTTP내용을 SSL/TLS를 프로토콜을 통해 <br>
+  암호화 해서 전송합니다. <br>
+  HTTPS는 80번 포트를, HTTPS는 443번 포트를 사용합니다.  <br>
+  TLS통신을 위해서 Hannshake과정을 거치며, 내용은 다음과 같습니다. <br>
+  1. Client는 ClientHello 전송 <br>
+  2. Server는 ServerHello 전송 <br>
+  3. Server는 인증서, 랜덤 데이터를 포함한 Certificate전송 <br>
+  4. Client는 인증서 검증 <br>
+  5. Client는 pre-master secret을 생성하고 인증서의 공개 키를 이용해 암호화, 전송 <br>
+  6. Server는 복호화해서 pre-master secret을 알아내고, master secret생성 <br>
+  7. Server는 master secret으로 Session key생성 <br>
+  8. Server, Client는 ChangeCipherSpec, Finished전송으로 과정 완료 <br>
+  9. Server, Client는 대칭키 암호를 이용해 통신 <br>
   </br>
+  SSL은 CA에서 발급
+  <br>
 </details>
 
 <details>
@@ -194,6 +209,8 @@ https://github.com/ksundong/backend-interview-question
 [우아한형제들 기술 블로그](https://woowabros.github.io/)
 
 [NHN 기술 블로그](https://meetup.toast.com/)
+
+[나무위키](https://namu.wiki/)
 
 
 
