@@ -31,10 +31,10 @@ CS인터뷰를 준비하는데 도움이 되기를 바랍니다.
 <details>
   <summary>웹사이트에 접속할 때 무슨 일이 일이 일어나는지 설명해 보세요.</summary>
   </br>
-  주소창에 URL을 입력하면 브라우저는 DNS서버에 요청을 해서 IP주소를 얻습니다. 
-  IP주소를 얻으면 HTTP를 이용해서 IP주소로 웹사이트에 대해 요청합니다. 
-  서버는 요청을 받으면, 처리해서 다시 응답을 보냅니다. 
-  브라우저는 응답을 받으면 HTML코드를 파싱해서 화면에 출력합니다. 
+  주소창에 URL을 입력하면 브라우저는 DNS서버에 요청을 해서 IP주소를 얻습니다. <br>
+  IP주소를 얻으면 HTTP를 이용해서 IP주소로 웹사이트에 대해 요청합니다. <br>
+  서버는 요청을 받으면, 처리해서 다시 응답을 보냅니다. <br>
+  브라우저는 응답을 받으면 HTML코드를 파싱해서 화면에 출력합니다. <br>
   </br>
 </details>
 
@@ -104,6 +104,62 @@ CS인터뷰를 준비하는데 도움이 되기를 바랍니다.
   </br>
 </details>
 
+<details>
+  <summary>라우터와 게이트웨이의 특징을 설명해보세요.</summary>
+  </br>
+  라우터는 OSI 7 Layer 중, Network Layer에서 동작하는 장비입니다. <br>
+  Subnet이 다른 장비간을 연결 할 떄 사용합니다. <br>
+  Routing Table을 참조하여 목적지의 IP주소에 따라 다른 Router로 패킷을 전달합니다. <br>
+  라우팅 기법으로는 CIDR(사이더)방식을 가장 많이 활용하며, <br>
+  각 네트워크의 영역을 구분지을 수 있습니다.  <br>
+  게이트웨이는 서로 다른 통신망, 혹은 다른 프로토콜을 사용하는 네트워크 간을 연결해 줍니다. <br>
+  다만 게이트웨이와 라우터는 명확하게 분리되는 개념이 아닙니다. 특정 역할을 의미하는 것이라서, <br>
+  라우터가 게이트웨이의 역할을 할 수도 있고, 다른 장비나 소프트웨어가 그러한 역할을 할 수도 있습니다. 
+  </br><br>
+</details>
+
+<details>
+  <summary>스위치의 동작 방식을 설명해보세요.</summary>
+  </br>
+  스위치는 OSI 7 Layer 중, Data Link Layer에서 동작하는 장비입니다. <br>
+  Mac Address가 기록된 테이블을 가지고 있어,  <br>
+  목적지의 MAC주소를 가진 장비의 포트로만 프레임을 전송합니다. <br>
+  스위치가 처음에 아무런 정보도 갖고 있지 않다면, 모든 포트로 프레임을 전송하지만, <br>
+  프레임이 스위치를 거쳐갈 때, 각 포트의 MAC주소를 기억합니다. <br>
+  처음 MAC주소를 사용한 통신을 하기 위해서는, 송신자는 ARP요청 패킷을 <br>
+  Broadcast로 전송합니다. 모든 호스트와 라우터는 ARP 요청 패킷을 수신하지만, <br>
+  요청 패킷에 해당하는 수신자만 ARP Reply 패킷을 유니캐스트로 전송합니다. <br>
+  </br>
+</details>
+
+<details>
+  <summary>HTTP와 HTTPS의 차이점에 대해서 설명해보세요.</summary>
+  </br>
+
+  </br>
+</details>
+
+<details>
+  <summary>RESTful 대해서 설명해보세요.</summary>
+  </br>
+
+  </br>
+</details>
+
+<details>
+  <summary>OSI 7 Layer와 TCP/IP의 차이에 대해서 설명해보세요.</summary>
+  </br>
+
+  </br>
+</details>
+
+<details>
+  <summary>CORS에 대해서 설명해보세요.</summary>
+  </br>
+
+  </br>
+</details>
+
 
 
 ## 운영체제
@@ -125,6 +181,8 @@ CS인터뷰를 준비하는데 도움이 되기를 바랍니다.
 
 
 ## 참고자료
+https://github.com/ksundong/backend-interview-question
+
 [네이버 기술 블로그](https://d2.naver.com/helloworld)
 
 [라인 기술 블로그](https://engineering.linecorp.com/ko/blog/)
@@ -137,7 +195,6 @@ CS인터뷰를 준비하는데 도움이 되기를 바랍니다.
 
 [NHN 기술 블로그](https://meetup.toast.com/)
 
-https://github.com/ksundong/backend-interview-question
 
 
 
