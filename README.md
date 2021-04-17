@@ -16,7 +16,7 @@ CS인터뷰를 준비하는데 도움이 되기를 바랍니다.
 
 
 <details>
-  <summary>질문질문?</summary>
+  <summary>질문 대해서 설명해 보세요.</summary>
   </br>
   답변답변<br>
   
@@ -25,7 +25,45 @@ CS인터뷰를 준비하는데 도움이 되기를 바랍니다.
 
 
 ## 데이터베이스
+<details>
+  <summary>RDBMS와 NOSQL의 특징에 대해서 설명해 보세요.</summary>
+  </br>
+  RDB의 경우, 정해진 스키마를 갖고 있습니다. <br>
+  데이터는 관계를 통해서 여러개의 테이블에 분산됩니다. <br>
+  테이블간의 관계에서 foreigen key를 사용해서 join이 가능하다는 점이 특징입니다. <br>
+  NOSQL의 경우에는 다양한 프로그램들이 있어서 각기 특징이 다릅니다. <br>
+  보편적인 특징으로는, RDB와 반대로 Schema가 존재하지 않고, 테이블 간의 관계를 정의하지 않으며, <br>
+  분산 저장을 통한 Scale-out에 유리한 구조를 가지고 있습니다. <br>
+  <br>
+  RDB는 데이터 구조가 명확하고 변경 될 여지가 없고, <br> 
+  데이터 무결성에 대한 보장이 필요한 시스템에서 사용하는 것이 좋습니다. <br>
+  또한, 관계를 맺고 있는 데이터가 자주 Update가 일어나는 경우에 적합합니다. <br>
+  NOSQL은 데이터 구조를 잘 알 수 없고, 
+  데이터의 구조의 변경이 일어날 수 있는 경우에 사용하는  것이 좋습니다. <br>
+  또한 데이터의 양이 많지만 Update가 많이 이루어지지 않는 시스템에 사용하는 것이 좋습니다. <br>
+  </br>
+</details>
 
+<details>
+  <summary>Transaction, ACID에 대해서 설명해 보세요.</summary>
+  </br>
+  
+  </br>
+</details>
+
+<details>
+  <summary>NOSQL 종류에 대해서 설명해 보세요.</summary>
+  </br>
+  
+  </br>
+</details>
+
+<details>
+  <summary>분산형 데이터베이스의 CAP에 대해서 설명해 보세요.</summary>
+  </br>
+  
+  </br>
+</details>
 
 ## 네트워크
 <details>
@@ -50,7 +88,7 @@ CS인터뷰를 준비하는데 도움이 되기를 바랍니다.
   top-level name server를 참조하라고 응답합니다. <br>
   top-level name server - com 서버는 그 아래 서버에 대한 정보를 갖고 있어 <br>
   google.com의 네임서버를 참조하라고 응답합니다. <br>
-  최조 요청을 받은 네임서버는 클라이언트에게 google.com의 IP주소를 전송합니다. <br>
+  최  요청을 받은 네임서버는 클라이언트에게 google.com의 IP주소를 전송합니다. <br>
   물론 각 서버는 한번 요청한 이후 캐시를 저장하고 있어 동일한 요청에 대해 계속 <br>
   다른 DNS서버로 요청을 보내지는 않습니다. 단, 캐시에는 TTL이 있어 유효기간이 지나면 삭제됩니다. <br>
   Windows의 경우, default로 86,400(1day)만큼 DNS Cache를 저장합니다. <br>
@@ -106,7 +144,7 @@ CS인터뷰를 준비하는데 도움이 되기를 바랍니다.
 </details>
 
 <details>
-  <summary>라우터와 게이트웨이의 특징을 설명해보세요.</summary>
+  <summary>라우터와 게이트웨이의 특징을 설명해 보세요.</summary>
   </br>
   라우터는 OSI 7 Layer 중, Network Layer에서 동작하는 장비입니다. <br>
   Subnet이 다른 장비간을 연결 할 떄 사용합니다. <br>
@@ -120,7 +158,7 @@ CS인터뷰를 준비하는데 도움이 되기를 바랍니다.
 </details>
 
 <details>
-  <summary>스위치의 동작 방식을 설명해보세요.</summary>
+  <summary>스위치의 동작 방식을 설명해 보세요.</summary>
   </br>
   스위치는 OSI 7 Layer 중, Data Link Layer에서 동작하는 장비입니다. <br>
   Mac Address가 기록된 테이블을 가지고 있어,  <br>
@@ -134,7 +172,7 @@ CS인터뷰를 준비하는데 도움이 되기를 바랍니다.
 </details>
 
 <details>
-  <summary>HTTP와 HTTPS의 차이점에 대해서 설명해보세요.</summary>
+  <summary>HTTP와 HTTPS의 차이점에 대해서 설명해 보세요.</summary>
   </br>
   HTTP는 평문 데이터를 전송하는 프로토콜이고, 이러한 과정에서 제3자가 패킷을 탈취할 경우, <br>
   패킷 안에 있는 정보를 볼 수 있습니다. HTTPS는 HTTP내용을 SSL/TLS를 프로토콜을 통해 <br>
@@ -154,7 +192,7 @@ CS인터뷰를 준비하는데 도움이 되기를 바랍니다.
 </details>
 
 <details>
-  <summary>TLS/SSL에서 인증서를 검증하는 과정을 설명해보세요.</summary>
+  <summary>TLS/SSL에서 인증서를 검증하는 과정을 설명해 보세요.</summary>
   </br>
   인증서에는, 발급자, 서명 알고리즘, 유효기간, 공개 키, 지문 등의 내용이 있습니다. <br>
   <br>
@@ -174,7 +212,7 @@ CS인터뷰를 준비하는데 도움이 되기를 바랍니다.
 </details>
 
 <details>
-  <summary>Load Balancer에 대해 설명해보세요.</summary>
+  <summary>Load Balancer에 대해 설명해 보세요.</summary>
   </br>
    로드 밸런서는 서버에 가해지는 부하를 분산해주는 장치 및 기술을 말합니다. <br>
    서버에서 서비스를 하기에 트래픽이 너무 높다면 Scale-up / Scale-out 을 해야 합니다. <br>
@@ -203,7 +241,7 @@ CS인터뷰를 준비하는데 도움이 되기를 바랍니다.
 </details>
 
 <details>
-  <summary>HTML Status Code에 대해서 설명해보세요.</summary>
+  <summary>HTML Status Code에 대해서 설명해 보세요.</summary>
   </br>
    200: 성공 <br>
    3xx: 리다이렉션 <br>
@@ -215,7 +253,7 @@ CS인터뷰를 준비하는데 도움이 되기를 바랍니다.
 </details>
 
 <details>
-  <summary>RESTful 대해서 설명해보세요.</summary>
+  <summary>RESTful 대해서 설명해 보세요.</summary>
   </br>
    REST란 Representational State Transfer의 약자입니다. <br>
    
