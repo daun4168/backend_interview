@@ -47,7 +47,68 @@ CS인터뷰를 준비하는데 도움이 되기를 바랍니다.
 <details>
   <summary>Transaction, ACID에 대해서 설명해 보세요.</summary>
   </br>
-  
+  트랜잭션이란 DB내에서 하나의 논리적 기능을 수행하기 위해서 여러 작업들을 묶어놓은 단위입니다. <br>
+  ACID란 트랜잭션의 특징입니다. Atomicity, Consistency, Isolation, Durability를 나타냅니다.<br>
+  <br>
+  Atomicity, 원자성은 All or Nothing, 즉 한 트랜잭션 내의 모든 연산이<br>
+  전부 수행되거나, 아니면 전부 수행되지 않는다는 것을 나타냅니다.<br>
+  Consistnecy, 일관성은 트랜잭션 완료 이후에도 일관성 있는 DB상태를 유지하는 것을 의미합니다. <br>
+  시스템의 규칙은 수행 전과 수행 후에도 같아야 합니다.<br>
+  Isolation, 독립성은 트랜잭션 수행 중에는 다른 작업이 영향을 주지 않는다는 뜻입니다. <br>
+  즉, 트랜잭션의 순서는 연속적이여야만 함을 의미합니다. <br>
+  Durability, 영구성은 성공적으로 수행된 트랜잭션은 영원히 반영됨을 뜻합니다. <br>
+  모든 트랜잭션은 로그로 남고, 이전 상태로 되돌릴 수 있습니다. <br>
+  <br>
+</details>
+
+<details>
+  <summary>Transaction의 Isolatino Level에 대해서 설명해 보세요.</summary>
+  </br>
+  트랜잭션의 격리 수준은 여러가지 단계가 있습니다. <br>
+  <br>
+  Level0, Read Uncommitted는 트랜젝션에서 처리중인,  <br>
+  아직 커밋되지 않은 데이터를 다른 트랜잭션이 읽는 것을 허용합니다. <br>
+  Dirty Read현상이 발생합니다.<br>
+  정합성에 문제가 많아 주로 사용하지는 않습니다. <br>
+  <br>
+  Level1, Read Committed는 커밋되어 확정된 데이터만 읽는 것을 허용합니다.  <br>
+  Non-Reapeatable Read(Inconsistent Analysis)현상이 발생합니다. <br>
+  읽기를 공유하는 Lock를 이용해서 하나의 레코드를 읽을 때 Lock를 설정하고,  <br>
+  해당 레코드에서 빠지는 순간 Lock을 해제해서 구현하는 방식이 있습니다. <br>
+  또는 쿼리시작 시점의 Undo데이터를 제공하는 방식으로 구현이 가능합니다. <br>
+  성능과 정합성에 적절한 타협을 한 방식으로 DBMS에서 주로 사용합니다. <br>
+  <br>
+  Level2, Repeatable Read는, 선행 트랜잭션이 읽은 데이터를 트랜잭션이 종료될 때 까지 <br>
+  이후 트랜잭션이 Update/Delete를 하는 것을 허용하지 않습니다. <br>
+  Phantom Read(첫번째 쿼리에서 없던 레코드가 두번째 쿼리에서 나타남)현상이 발생합니다.<br>
+  Lock을 커밋할 때 까지 유지하는 방식으로 구현하거나,  <br>
+  각 트랜잭션에 순차적으로 ID를 부여하여,  <br>
+  트랜잭션 ID보다 작은 번호에서 변경된 것만 읽게 하는 방식으로 구현이 가능합니다. <br>
+  MVCC(multiversion concurrency control)방식이라고 합니다. <br>
+  <br>
+  Serializable는, 트랜잭션을 순차적으로 처리하는 것을 의미합니다. <br>
+  읽는 것이 가장 엄격하고 정밀한 isolation을 보장하지만, <br>
+  동시 처리성능이 낮아 거의 사용되지 않습니다. <br>
+  <br>
+</details>
+
+<details>
+  <summary>RDBMS의 Index에 대해서 설명해 보세요.</summary>
+  </br>
+  인덱스는 테이블의 동작 속도를 높여주는 자료 구조입니다. <br>
+  인덱스를 설정할 때는, Cardinality 등의 기준을 사용해서 결정합니다. <br>
+  Cardinality란, 특정 컬럼에 사용되는 값의 유니크한 값의 개수입니다.   <br>
+  Cardinality가 높을 수록 인덱스를 설정했을 때 효율적입니다.  <br>
+  Index를 설정할 경우 Select Query는 효과적으로 실행할 수 있지만,  <br>
+  Create, Update, Delete Query의 경우 성능이 떨어지므로,  <br>
+  DB가 어떻게 사용되는 지에 따라 적절한 수준으로 설정하는 것이 좋습니다.  <br>
+  </br>
+</details>
+
+<details>
+  <summary>데이터베이스 정규화에 대해서 설명해 보세요.</summary>
+  </br>
+
   </br>
 </details>
 
