@@ -155,21 +155,27 @@ CS인터뷰를 준비하는데 도움이 되기를 바랍니다.
 <details>
   <summary>TLS/SSL에서 인증서를 검증하는 과정을 설명해보세요.</summary>
   </br>
-  인증서에는, 대표적으로 5가지의 값이 있습니다. <br>
-  소유자 이름, 공개 키, 유효 기간, UID, 해시값(지문) <br>
-  인증서의 검증은 최상위 인증 기관 - Root CA가 안전하다는 것으로 시작합니다. <br>
-  Root CA들의 인증서 및 공개 키는 이미 브라우저에 내장되어 있습니다. <br>
-  SSL 연결을 확립하는 과정에서 인증서를 받으면, 그인증서의 해시값이 
-  
+  인증서에는, 발급자, 서명 알고리즘, 유효기간, 공개 키, 지문 등의 내용이 있습니다. <br>
+  <br>
+  인증서의 검증은 최상위 인증 기관 - Root CA가 신뢰할 수 있다는 것으로 시작합니다. <br>
+  Root CA들의 인증서 및 공개 키는 보통 MS 트러스티드 루트 프로그램 등, OS에서 받아옵니다. <br>
+  다만 최근 Chrome의 경우 자체 루트 인증인 Chrome root program을 운영할 계획이라고 합니다. <br>
+  <br>
+  중간 인증 기관(ICA)의 인증서가 신뢰할 만한 인증서인지 검증하기 위해, <br>
+  ICA인증서의 지문을 RootCA의 공개키를 이용해서 복호화합니다. <br>
+  이 지문이 인증서의 해시값과 일치할 경우 인증서를 신뢰할 수 있습니다 <br>
+  동일한 과정을 하위 CA까지 검증하는 과정(Chain of Trust)으로 인증서를 검증할 수 있습니다. <br>
+  암호화 알고리즘으로는 SHA256 RSA2048을 주로 사용합니다.<br>
+  다만 RootCA를 신뢰할 수 없을 때, <br>
+  즉 RootCA의 비밀키가 유출되었을 경우에는 문제가 발생할 수 있습니다. <br>
+  참고: chrome://settings/security <br>
   <br>
 </details>
-https://m.blog.naver.com/alice_k106/221468341565
-https://en.wikipedia.org/wiki/Certificate_authority
 
 <details>
   <summary>RESTful 대해서 설명해보세요.</summary>
   </br>
-
+    
   </br>
 </details>
 
