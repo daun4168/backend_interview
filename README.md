@@ -149,10 +149,22 @@ CS인터뷰를 준비하는데 도움이 되기를 바랍니다.
   7. Server는 master secret으로 Session key생성 <br>
   8. Server, Client는 ChangeCipherSpec, Finished전송으로 과정 완료 <br>
   9. Server, Client는 대칭키 암호를 이용해 통신 <br>
-  </br>
-  SSL은 CA에서 발급
   <br>
 </details>
+
+<details>
+  <summary>TLS/SSL에서 인증서를 검증하는 과정을 설명해보세요.</summary>
+  </br>
+  인증서에는, 대표적으로 5가지의 값이 있습니다. <br>
+  소유자 이름, 공개 키, 유효 기간, UID, 해시값(지문) <br>
+  인증서의 검증은 최상위 인증 기관 - Root CA가 안전하다는 것으로 시작합니다. <br>
+  Root CA들의 인증서 및 공개 키는 이미 브라우저에 내장되어 있습니다. <br>
+  SSL 연결을 확립하는 과정에서 인증서를 받으면, 그인증서의 해시값이 
+  
+  <br>
+</details>
+https://m.blog.naver.com/alice_k106/221468341565
+https://en.wikipedia.org/wiki/Certificate_authority
 
 <details>
   <summary>RESTful 대해서 설명해보세요.</summary>
