@@ -53,6 +53,7 @@ CS인터뷰를 준비하는데 도움이 되기를 바랍니다.
   최조 요청을 받은 네임서버는 클라이언트에게 google.com의 IP주소를 전송합니다. <br>
   물론 각 서버는 한번 요청한 이후 캐시를 저장하고 있어 동일한 요청에 대해 계속 <br>
   다른 DNS서버로 요청을 보내지는 않습니다. 단, 캐시에는 TTL이 있어 유효기간이 지나면 삭제됩니다. <br>
+  Windows의 경우, default로 86,400(1day)만큼 DNS Cache를 저장합니다. <br>
   <br>
   DNS서버에 요청을 보낼 때, 보편적으로는 UDP/53 포트를 사용하지만, 전송 데이터가 512Byte이상이거나, <br>
   Zone Transfer가 일어나는 경우에는 TCP/53을 사용합니다. <br>
@@ -173,14 +174,69 @@ CS인터뷰를 준비하는데 도움이 되기를 바랍니다.
 </details>
 
 <details>
+  <summary>Load Balancer에 대해 설명해보세요.</summary>
+  </br>
+   로드 밸런서는 서버에 가해지는 부하를 분산해주는 장치 및 기술을 말합니다. <br>
+   서버에서 서비스를 하기에 트래픽이 너무 높다면 Scale-up / Scale-out 을 해야 합니다. <br>
+   다만 Scale-up은 한계가 있어 결국 분산 처리를 위해 Scale-out을 합니다. <br>
+   DNS서버가 로드밸런서의 IP주소를 클라이언트에게 전송하고, 클라이언트는 로드밸런서로 요청을 보냅니다. <br>
+   로드밸런서는 요청을 서버로 분배하고, 서버는 로드밸런서로, 또는 클라이언트로 직접 응답을 보냅니다. <br>
+   로드밸런서는, Health Check, Tunneling, NAT(Network Address Translation) 등의 기능을 합니다. 
+   로드밸런서의 종류로는 4-layer / 7-layer에서 작동하는 로드밸런서가 있습니다. <br>
+   l4 로드밸런서의 작동 방식중 대표적인 것은 다음과 같습니다. <br>
+   Weighted Least Connections: 서버의 커넥션의 수와 가중치를 바탕으로 요청을 분배합니다. <br>
+   Fastest Response Time: 서버가 응답하는 시간이 가장 빠른 서버로 요청을 분배합니다. <br>
+   Source Hash Scehduling: 사용자의 IP를 해싱하고 그 결과로 서버로 요청을 분배합니다. <br>
+   l7 로드밸런서의 경우 l4로드밸런서의 기능을 포함하여, 추가적으로 <br>
+   URL Switching: 하위 URL들을 특정 서버로 처리합니다.<br>
+   Context Swithcing: 리소스에 따라 요청을 분배합니다. (이미지/동영상 등)<br>
+   Persistence with Cookies: 쿠키 정보를 바탕으로 동일한 서버에 계속 할당해주는 방식입니다. <br>
+   <br>
+   SLB에서 발전된 개념으로 GSLB가 있습니다. <br>
+   GSLB란 DNS를 기반으로 로드밸런싱을 하는 방법입니다. <br>
+   동일한 서비스를 하는 서버들이 여러 지역에 분산되어 운용 될 때 이용하는 방식입니다. <br>
+   단순 DNS방식에 비해, Health Check를 하고, RTT및 지리적 위치를 고려하여 <br>
+   요청을 분배한다는 장점이 있습니다. <br>
+   GSLB는 Local name server와 Second Level name server사이에 위치합니다. <br>
+   GSLB는 DNS Proxy로 동작하여, DNS Query를 내부 DNS서버로 전달하는 역할을 합니다. <br>
+   </br>
+</details>
+
+<details>
+  <summary>HTML Status Code에 대해서 설명해보세요.</summary>
+  </br>
+   200: 성공 <br>
+   3xx: 리다이렉션 <br>
+   403: Forbidden, 권한 없음 <br>
+   404: Not Found, 찾을 수 없음<br>
+   500: 내부 서버 오류<br>
+   503: 서비스 사용 불가 (서버 오버로드 등)<br>
+  </br>
+</details>
+
+<details>
   <summary>RESTful 대해서 설명해보세요.</summary>
   </br>
-    
+   REST란 Representational State Transfer의 약자입니다. <br>
+   
+  </br>
+</details>
+
+<details>
+  <summary>Proxy에 대해서 설명해보세요.</summary>
+  </br>
   </br>
 </details>
 
 <details>
   <summary>OSI 7 Layer와 TCP/IP의 차이에 대해서 설명해보세요.</summary>
+  </br>
+
+  </br>
+</details>
+
+<details>
+  <summary>NAT(네트워크 주소 변환)에 대해서 설명해보세요.</summary>
   </br>
 
   </br>
