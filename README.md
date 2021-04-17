@@ -16,10 +16,9 @@ CS인터뷰를 준비하는데 도움이 되기를 바랍니다.
 
 
 <details>
-  <summary>질문 대해서 설명해 보세요.</summary>
+  <summary>질문에 대해서 설명해 보세요.</summary>
   </br>
-  답변답변<br>
-  
+  답변답변답변<br>
   </br>
 </details>
 
@@ -65,6 +64,7 @@ CS인터뷰를 준비하는데 도움이 되기를 바랍니다.
   <summary>Transaction의 Isolatino Level에 대해서 설명해 보세요.</summary>
   </br>
   트랜잭션의 격리 수준은 여러가지 단계가 있습니다. <br>
+  Lock 또는, MVCC(multiversion concurrency control)를 사용합니다. <br>
   <br>
   Level0, Read Uncommitted는 트랜젝션에서 처리중인,  <br>
   아직 커밋되지 않은 데이터를 다른 트랜잭션이 읽는 것을 허용합니다. <br>
@@ -82,11 +82,10 @@ CS인터뷰를 준비하는데 도움이 되기를 바랍니다.
   이후 트랜잭션이 Update/Delete를 하는 것을 허용하지 않습니다. <br>
   Phantom Read(첫번째 쿼리에서 없던 레코드가 두번째 쿼리에서 나타남)현상이 발생합니다.<br>
   Lock을 커밋할 때 까지 유지하는 방식으로 구현하거나,  <br>
-  각 트랜잭션에 순차적으로 ID를 부여하여,  <br>
+  각 트랜잭션에 순차적으로 ID를 부여하여, <br>
   트랜잭션 ID보다 작은 번호에서 변경된 것만 읽게 하는 방식으로 구현이 가능합니다. <br>
-  MVCC(multiversion concurrency control)방식이라고 합니다. <br>
   <br>
-  Serializable는, 트랜잭션을 순차적으로 처리하는 것을 의미합니다. <br>
+  Level3, Serializable는, 트랜잭션을 순차적으로 처리하는 것을 의미합니다. <br>
   읽는 것이 가장 엄격하고 정밀한 isolation을 보장하지만, <br>
   동시 처리성능이 낮아 거의 사용되지 않습니다. <br>
   <br>
@@ -108,7 +107,30 @@ CS인터뷰를 준비하는데 도움이 되기를 바랍니다.
 <details>
   <summary>데이터베이스 정규화에 대해서 설명해 보세요.</summary>
   </br>
+  데이터베이스 정규화에는, 1NF, 2NF, 3NF, BCNF등이 있습니다.
+  정규화 되지 않은 테이블은, 갱신 이상, 삽입 이상, 삭제 이상 등의 문제가 있습니다.
+  정규화를 통해, Data Reduncamcy를 제거하며,
+  데이터 저장을 논리적으로, 의미있게(informative) 할 수 있는 장점이 있습니다. 
+  또한 데이터베이스 구조 확장 시에 구조 변경을 최소화 할 수 있습니다. 
+  
+  1NF, 1차 정규형의 핵심은, 각 Row마다 Column의 값이 1개씩만 있어야 합니다. (Atomic Value)
+  원칙적으로는 "어떤 관계와 동일 구조"임을 뜻하며, 아래의 조건이 있습니다.
+  1. 모든 Column(attribute)는 각 Table에서 Unique하다. 
+  2. 모든 entry는 하나의 값을 가져야 하며, Atomic해야 한다. 
+  3. 중복되는 Row가 없다.
 
+  2NF, 2차 정규형의 핵심은, 부분적 종속이 없어야 합니다. (완전 함수 종속)
+  즉, Candidate Key와 K와, K에 속하지 않은 Attirbute A가 있을 때, 
+  A를 결정하기 위해 K일부로 결정되지 않고, K전체를 참조해야 하는 경우,
+  1NF인 테이블은 2NF의 필요충분조건을 만족합니다. 
+  
+  3NF, 3차 정규형의 핵심은 테이블 내의 모든 속성이 기본 키에만 의존해야 합니다. 
+  (이행적 함수 종속 없음)
+  이행적 함수 종속이란 A -> B, B -> C  ==> A -> C 를 의미합니다. 
+  
+  BCNF 정규화의 핵심은 모든 결정자가 후보 키가 되는 것입니다. 
+  즉, 어떤 컬럼이 다른 컬럼의 값을 결정하는 결정자인데 Candidate Key가 아니라면,
+  BCNF 정규화를 만족시키기 위해 분해해야 합니다. 
   </br>
 </details>
 
@@ -349,7 +371,6 @@ CS인터뷰를 준비하는데 도움이 되기를 바랍니다.
 </details>
 
 
-
 ## 운영체제
 
 
@@ -369,7 +390,7 @@ CS인터뷰를 준비하는데 도움이 되기를 바랍니다.
 
 
 ## 참고자료
-https://github.com/ksundong/backend-interview-question
+[Backend-Interview-Question](https://github.com/ksundong/backend-interview-question)
 
 [네이버 기술 블로그](https://d2.naver.com/helloworld)
 
@@ -385,6 +406,4 @@ https://github.com/ksundong/backend-interview-question
 
 [나무위키](https://namu.wiki/)
 
-
-
-
+[위키백과](https://ko.wikipedia.org/wiki/)
