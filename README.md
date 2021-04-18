@@ -10,7 +10,6 @@ CS인터뷰를 준비하는데 도움이 되기를 바랍니다.
 - [자료구조와 알고리즘](#자료구조와-알고리즘)
 - [컴퓨터 보안](#컴퓨터-보안)
 - [프로그래밍 언어](#프로그래밍-언어)
-- [기술동향](#기술동향)
 - [기타](#기타)
 - [참고자료](#참고자료)
 
@@ -135,6 +134,13 @@ CS인터뷰를 준비하는데 도움이 되기를 바랍니다.
 </details>
 
 <details>
+  <summary>클러스터링과 리플리케이션에 대해서 설명해 보세요.</summary>
+  </br>
+  
+  </br>
+</details>
+
+<details>
   <summary>NOSQL 종류에 대해서 설명해 보세요.</summary>
   </br>
   
@@ -143,6 +149,13 @@ CS인터뷰를 준비하는데 도움이 되기를 바랍니다.
 
 <details>
   <summary>분산형 데이터베이스의 CAP에 대해서 설명해 보세요.</summary>
+  </br>
+  
+  </br>
+</details>
+
+<details>
+  <summary>Sharding과 Partitioning에 대해서 설명해 보세요.</summary>
   </br>
   
   </br>
@@ -350,6 +363,12 @@ CS인터뷰를 준비하는데 도움이 되기를 바랍니다.
 </details>
 
 <details>
+  <summary>VPN에 대해서 설명해보세요.</summary>
+  </br>
+  </br>
+</details>
+
+<details>
   <summary>OSI 7 Layer와 TCP/IP의 차이에 대해서 설명해보세요.</summary>
   </br>
 
@@ -370,23 +389,244 @@ CS인터뷰를 준비하는데 도움이 되기를 바랍니다.
   </br>
 </details>
 
+<details>
+  <summary>세션과 쿠키에 대해서 설명해보세요.</summary>
+  </br>
+
+  </br>
+</details>
+
+<details>
+  <summary>CDN에 대해서 설명해보세요.</summary>
+  </br>
+
+  </br>
+</details>
+
+
 
 ## 운영체제
+
+<details>
+  <summary>Process와 Thread의 특징에 대해서 설명해보세요.</summary>
+  </br>
+
+  </br>
+</details>
+
+<details>
+  <summary>Context Switching 과정에 대해서 설명해보세요.</summary>
+  </br>
+
+  </br>
+</details>
+
+<details>
+  <summary>Deadlock에 대해서 설명해보세요.</summary>
+  </br>
+
+  </br>
+</details>
+
+<details>
+  <summary>Critical Section에 대해서 설명해보세요.</summary>
+  </br>
+
+  </br>
+</details>
+
+<details>
+  <summary>Starvation현상에 대해서 설명해보세요.</summary>
+  </br>
+
+  </br>
+</details>
+
+<details>
+  <summary>페이징과 세그멘테이션에 대해서 설명해보세요.</summary>
+  </br>
+
+  </br>
+</details>
+
+<details>
+  <summary>Blocking과 Nonblocking의 특징에 대해서 설명해보세요 .</summary>
+  </br>
+
+  </br>
+</details>
+
+<details>
+  <summary>Synchronous와 Asynchronous의 특징에 대해서 설명해보세요 .</summary>
+  </br>
+
+  </br>
+</details>
+
+<details>
+  <summary>프로그램의 메모리 영역에 대해서 설명해보세요 .</summary>
+  </br>
+
+  </br>
+</details>
+
+<details>
+/  <summary>리눅스 커널에 대해서 설명해보세요 .</summary>
+  </br>
+
+  </br>
+</details>
 
 
 ## 자료구조와 알고리즘
 
+<details>
+  <summary>B+Tree의 특징에 대해서 설명해보세요 .</summary>
+  </br>
+
+  </br>
+</details>
+
+<details>
+  <summary>Red Black Tree의 특징에 대해서 설명해보세요 .</summary>
+  </br>
+
+  </br>
+</details>
+
 
 ## 컴퓨터 보안
+
+<details>
+  <summary>SQL Injection에 대해서 설명해보세요 .</summary>
+  </br>
+
+  </br>
+</details>
+
+<details>
+  <summary>XSS에 대해서 설명해보세요 .</summary>
+  </br>
+
+  </br>
+</details>
+
+<details>
+  <summary>DNS spoofing에 대해서 설명해보세요 .</summary>
+  </br>
+
+  </br>
+</details>
+
+<details>
+  <summary>RSA에 대해서 설명해보세요 .</summary>
+  </br>
+
+  </br>
+</details>
+
+<details>
+  <summary>Diffie–Hellman key exchange에 대해서 설명해보세요 .</summary>
+  </br>
+
+  </br>
+</details>
 
 
 ## 프로그래밍 언어
 
+<details>
+  <summary>Singleton Pattern에 대해서 설명해보세요 .</summary>
+  </br>
 
-## 기술동향
+  </br>
+</details>
+
+<details>
+  <summary>Java의 Overriding과 Overloading에 대해서 설명해보세요 .</summary>
+  </br>
+
+  </br>
+</details>
+
+<details>
+  <summary>Java의 JVM에 대해서 설명해보세요 .</summary>
+  </br>
+
+  </br>
+</details>
+
+<details>
+  <summary>Java의 Generic에 대해서 설명해보세요 .</summary>
+  </br>
+
+  </br>
+</details>
+
+<details>
+  <summary>Python의 GIL에 대해서 설명해보세요 .</summary>
+  </br>
+
+  </br>
+</details>
+
+<details>
+  <summary>Garbage Collection에 대해서 설명해보세요 .</summary>
+  </br>
+
+  </br>
+</details>
+
+<details>
+  <summary>MVC Pattern에 대해서 설명해보세요 .</summary>
+  </br>
+
+  </br>
+</details>
+
+<details>
+  <summary>JS의 Callback과 Closure에 대해서 설명해보세요 .</summary>
+  </br>
+
+  </br>
+</details>
 
 
 ## 기타
+<details>
+  <summary>Docker에 대해서 설명해보세요 .</summary>
+  </br>
+
+  </br>
+</details>
+
+<details>
+  <summary>Kubernates에 대해서 설명해보세요 .</summary>
+  </br>
+
+  </br>
+</details>
+
+<details>
+  <summary>TDD에 대해서 설명해보세요 .</summary>
+  </br>
+
+  </br>
+</details>
+
+<details>
+  <summary>CI/CD에 대해서 설명해보세요 .</summary>
+  </br>
+
+  </br>
+</details>
+
+<details>
+  <summary>Git에 대해서 설명해보세요 .</summary>
+  </br>
+
+  </br>
+</details>
 
 
 ## 참고자료
