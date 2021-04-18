@@ -161,14 +161,24 @@ CS인터뷰를 준비하는데 도움이 되기를 바랍니다.
 </details>
 
 <details>
-  <summary>Consistent Hashing에 대해서 설명해 보세요.</summary>
+  <summary>Replication과 Clustering에 대해서 설명해 보세요.</summary>
   </br>
-  
+  리플리케이션은, DB를 권한에 따라 Master-Slave로 구축하는 방식입니다.  <br>
+  Master Node는 쓰기작업만을, Slave Node는 읽기작업만을 처리합니다.  <br>
+  비동기적으로 운영되어 지연시간이 적은 장점이 있지만, <br>
+  데이터 동기화가 보장되지 않아 일관성에 문제가 있을 수 있고, <br>
+  Master Node에 문제가 생길 경우 복구가 어렵습니다. <br>
+  <br>
+  클러스터링은, DB를 여러개의 서버에 수평적으로 구축하는 방식입니다. <br>
+  클러스터링은 SPoF(Single point of Failure)와 같은 문제를 해결하기 위해서 사용합니다. <br>
+  동기적으로 운영되어 Write에 지연 시간이 있습니다. <br>
+  항상 일관성있는 데이터를 얻을 수 있고,  <br>
+  하나의 노드가 죽어도 끊김없이 계속 운용이 가능합니다.  <br>
   </br>
 </details>
 
 <details>
-  <summary>클러스터링과 리플리케이션에 대해서 설명해 보세요.</summary>
+  <summary>Consistent Hashing에 대해서 설명해 보세요.</summary>
   </br>
   
   </br>
@@ -387,47 +397,55 @@ CS인터뷰를 준비하는데 도움이 되기를 바랍니다.
 </details>
 
 <details>
-  <summary>Proxy에 대해서 설명해보세요.</summary>
+  <summary>Proxy에 대해서 설명해 보세요.</summary>
+  </br>
+  프록시는, 클라이언트가 자신을 통해서 타 네트워크 서비스에 간접적으로 접속할 수 있게 해주는 </br>
+  시스템을 뜻합니다.  보안을 목적으로, 또는 캐시를 이용한 빠른 서비스를 목적으로 주로 사용합니다. </br>
+  Open Proxy(Forwarding Proxy)는, 어떤 유저라도 접속 가능한 프록시 서버를 뜻합니다. </br>
+  Anonymous Proxy, Transparnet Proxy 등이 존재합니다. </br>
+  Reverse Proxy(Surrogate Proxy)는, 클라이언트들이 프록시 서버를 볼 때, 원본 서버로</br>
+  보이게 하는 시스템을 뜻합니다. 클라이언트는 원본 서버의 존재를 알 수 없고, 모든 원본 서버의</br>
+  트래픽은 프록시를 통해 거쳐가게 됩니다. </br>
+  SSL Encryption, Load balancing, Cache, Compression등의 목적으로 사용합니다. </br>
+  </br>
+</details>
+
+<details>
+  <summary>VPN에 대해서 설명해 보세요.</summary>
   </br>
   </br>
 </details>
 
 <details>
-  <summary>VPN에 대해서 설명해보세요.</summary>
-  </br>
-  </br>
-</details>
-
-<details>
-  <summary>OSI 7 Layer와 TCP/IP의 차이에 대해서 설명해보세요.</summary>
-  </br>
-
-  </br>
-</details>
-
-<details>
-  <summary>NAT(네트워크 주소 변환)에 대해서 설명해보세요.</summary>
-  </br>
-
-  </br>
-</details>
-
-<details>
-  <summary>CORS에 대해서 설명해보세요.</summary>
+  <summary>OSI 7 Layer와 TCP/IP의 차이에 대해서 설명해 보세요.</summary>
   </br>
 
   </br>
 </details>
 
 <details>
-  <summary>세션과 쿠키에 대해서 설명해보세요.</summary>
+  <summary>NAT(네트워크 주소 변환)에 대해서 설명해 보세요.</summary>
   </br>
 
   </br>
 </details>
 
 <details>
-  <summary>CDN에 대해서 설명해보세요.</summary>
+  <summary>CORS에 대해서 설명해 보세요.</summary>
+  </br>
+
+  </br>
+</details>
+
+<details>
+  <summary>세션과 쿠키에 대해서 설명해 보세요.</summary>
+  </br>
+
+  </br>
+</details>
+
+<details>
+  <summary>CDN에 대해서 설명해 보세요.</summary>
   </br>
 
   </br>
@@ -438,70 +456,70 @@ CS인터뷰를 준비하는데 도움이 되기를 바랍니다.
 ## 운영체제
 
 <details>
-  <summary>Process와 Thread의 특징에 대해서 설명해보세요.</summary>
+  <summary>Process와 Thread의 특징에 대해서 설명해 보세요.</summary>
   </br>
 
   </br>
 </details>
 
 <details>
-  <summary>Context Switching 과정에 대해서 설명해보세요.</summary>
+  <summary>Context Switching 과정에 대해서 설명해 보세요.</summary>
   </br>
 
   </br>
 </details>
 
 <details>
-  <summary>Deadlock에 대해서 설명해보세요.</summary>
+  <summary>Deadlock에 대해서 설명해 보세요.</summary>
   </br>
 
   </br>
 </details>
 
 <details>
-  <summary>Critical Section에 대해서 설명해보세요.</summary>
+  <summary>Critical Section에 대해서 설명해 보세요.</summary>
   </br>
 
   </br>
 </details>
 
 <details>
-  <summary>Starvation현상에 대해서 설명해보세요.</summary>
+  <summary>Starvation현상에 대해서 설명해 보세요.</summary>
   </br>
 
   </br>
 </details>
 
 <details>
-  <summary>페이징과 세그멘테이션에 대해서 설명해보세요.</summary>
+  <summary>페이징과 세그멘테이션에 대해서 설명해 보세요.</summary>
   </br>
 
   </br>
 </details>
 
 <details>
-  <summary>Blocking과 Nonblocking의 특징에 대해서 설명해보세요 .</summary>
+  <summary>Blocking과 Nonblocking의 특징에 대해서 설명해 보세요 .</summary>
   </br>
 
   </br>
 </details>
 
 <details>
-  <summary>Synchronous와 Asynchronous의 특징에 대해서 설명해보세요 .</summary>
+  <summary>Synchronous와 Asynchronous의 특징에 대해서 설명해 보세요 .</summary>
   </br>
 
   </br>
 </details>
 
 <details>
-  <summary>프로그램의 메모리 영역에 대해서 설명해보세요 .</summary>
+  <summary>프로그램의 메모리 영역에 대해서 설명해 보세요 .</summary>
   </br>
 
   </br>
 </details>
 
 <details>
-/  <summary>리눅스 커널에 대해서 설명해보세요 .</summary>
+/  <summary>리눅스 커널에 대해서 설명해 보세요 .</summary>
   </br>
 
   </br>
@@ -511,14 +529,14 @@ CS인터뷰를 준비하는데 도움이 되기를 바랍니다.
 ## 자료구조와 알고리즘
 
 <details>
-  <summary>B+Tree의 특징에 대해서 설명해보세요 .</summary>
+  <summary>B+Tree의 특징에 대해서 설명해 보세요 .</summary>
   </br>
 
   </br>
 </details>
 
 <details>
-  <summary>Red Black Tree의 특징에 대해서 설명해보세요 .</summary>
+  <summary>Red Black Tree의 특징에 대해서 설명해 보세요 .</summary>
   </br>
 
   </br>
@@ -528,35 +546,63 @@ CS인터뷰를 준비하는데 도움이 되기를 바랍니다.
 ## 컴퓨터 보안
 
 <details>
-  <summary>SQL Injection에 대해서 설명해보세요 .</summary>
+  <summary>SQL Injection에 대해서 설명해 보세요 .</summary>
   </br>
 
   </br>
 </details>
 
 <details>
-  <summary>XSS에 대해서 설명해보세요 .</summary>
+  <summary>XSS에 대해서 설명해 보세요 .</summary>
   </br>
 
   </br>
 </details>
 
 <details>
-  <summary>DNS spoofing에 대해서 설명해보세요 .</summary>
+  <summary>CSRF에 대해서 설명해 보세요 .</summary>
   </br>
 
   </br>
 </details>
 
 <details>
-  <summary>RSA에 대해서 설명해보세요 .</summary>
+  <summary>ARP spoofing에 대해서 설명해 보세요 .</summary>
   </br>
 
   </br>
 </details>
 
 <details>
-  <summary>Diffie–Hellman key exchange에 대해서 설명해보세요 .</summary>
+  <summary>DNS spoofing에 대해서 설명해 보세요 .</summary>
+  </br>
+
+  </br>
+</details>
+
+<details>
+  <summary>DDoS, DRDos에 대해서 설명해 보세요 .</summary>
+  </br>
+
+  </br>
+</details>
+
+<details>
+  <summary>RSA에 대해서 설명해 보세요 .</summary>
+  </br>
+
+  </br>
+</details>
+
+<details>
+  <summary>Diffie–Hellman key exchange에 대해서 설명해 보세요 .</summary>
+  </br>
+
+  </br>
+</details>
+
+<details>
+  <summary>OAuth에 대해서 설명해 보세요 .</summary>
   </br>
 
   </br>
@@ -566,56 +612,56 @@ CS인터뷰를 준비하는데 도움이 되기를 바랍니다.
 ## 프로그래밍 언어
 
 <details>
-  <summary>Singleton Pattern에 대해서 설명해보세요 .</summary>
+  <summary>Singleton Pattern에 대해서 설명해 보세요 .</summary>
   </br>
 
   </br>
 </details>
 
 <details>
-  <summary>Java의 Overriding과 Overloading에 대해서 설명해보세요 .</summary>
+  <summary>Java의 Overriding과 Overloading에 대해서 설명해 보세요 .</summary>
   </br>
 
   </br>
 </details>
 
 <details>
-  <summary>Java의 JVM에 대해서 설명해보세요 .</summary>
+  <summary>Java의 JVM에 대해서 설명해 보세요 .</summary>
   </br>
 
   </br>
 </details>
 
 <details>
-  <summary>Java의 Generic에 대해서 설명해보세요 .</summary>
+  <summary>Java의 Generic에 대해서 설명해 보세요 .</summary>
   </br>
 
   </br>
 </details>
 
 <details>
-  <summary>Python의 GIL에 대해서 설명해보세요 .</summary>
+  <summary>Python의 GIL에 대해서 설명해 보세요 .</summary>
   </br>
 
   </br>
 </details>
 
 <details>
-  <summary>Garbage Collection에 대해서 설명해보세요 .</summary>
+  <summary>Garbage Collection에 대해서 설명해 보세요 .</summary>
   </br>
 
   </br>
 </details>
 
 <details>
-  <summary>MVC Pattern에 대해서 설명해보세요 .</summary>
+  <summary>MVC Pattern에 대해서 설명해 보세요 .</summary>
   </br>
 
   </br>
 </details>
 
 <details>
-  <summary>JS의 Callback과 Closure에 대해서 설명해보세요 .</summary>
+  <summary>JS의 Callback과 Closure에 대해서 설명해 보세요 .</summary>
   </br>
 
   </br>
@@ -624,35 +670,35 @@ CS인터뷰를 준비하는데 도움이 되기를 바랍니다.
 
 ## 기타
 <details>
-  <summary>Docker에 대해서 설명해보세요 .</summary>
+  <summary>Docker에 대해서 설명해 보세요 .</summary>
   </br>
 
   </br>
 </details>
 
 <details>
-  <summary>Kubernates에 대해서 설명해보세요 .</summary>
+  <summary>Kubernates에 대해서 설명해 보세요 .</summary>
   </br>
 
   </br>
 </details>
 
 <details>
-  <summary>TDD에 대해서 설명해보세요 .</summary>
+  <summary>TDD에 대해서 설명해 보세요 .</summary>
   </br>
 
   </br>
 </details>
 
 <details>
-  <summary>CI/CD에 대해서 설명해보세요 .</summary>
+  <summary>CI/CD에 대해서 설명해 보세요 .</summary>
   </br>
 
   </br>
 </details>
 
 <details>
-  <summary>Git에 대해서 설명해보세요 .</summary>
+  <summary>Git에 대해서 설명해 보세요 .</summary>
   </br>
 
   </br>
