@@ -60,7 +60,7 @@ CS인터뷰를 준비하는데 도움이 되기를 바랍니다.
 </details>
 
 <details>
-  <summary>Transaction의 Isolatino Level에 대해서 설명해 보세요.</summary>
+  <summary>Transaction의 Isolation Level에 대해서 설명해 보세요.</summary>
   </br>
   트랜잭션의 격리 수준은 여러가지 단계가 있습니다. <br>
   Lock 또는, MVCC(multiversion concurrency control)를 사용합니다. <br>
@@ -106,30 +106,64 @@ CS인터뷰를 준비하는데 도움이 되기를 바랍니다.
 <details>
   <summary>데이터베이스 정규화에 대해서 설명해 보세요.</summary>
   </br>
-  데이터베이스 정규화에는, 1NF, 2NF, 3NF, BCNF등이 있습니다.
-  정규화 되지 않은 테이블은, 갱신 이상, 삽입 이상, 삭제 이상 등의 문제가 있습니다.
-  정규화를 통해, Data Reduncamcy를 제거하며,
-  데이터 저장을 논리적으로, 의미있게(informative) 할 수 있는 장점이 있습니다. 
-  또한 데이터베이스 구조 확장 시에 구조 변경을 최소화 할 수 있습니다. 
-  
-  1NF, 1차 정규형의 핵심은, 각 Row마다 Column의 값이 1개씩만 있어야 합니다. (Atomic Value)
-  원칙적으로는 "어떤 관계와 동일 구조"임을 뜻하며, 아래의 조건이 있습니다.
-  1. 모든 Column(attribute)는 각 Table에서 Unique하다. 
-  2. 모든 entry는 하나의 값을 가져야 하며, Atomic해야 한다. 
-  3. 중복되는 Row가 없다.
+  데이터베이스 정규화에는, 1NF, 2NF, 3NF, BCNF등이 있습니다. <br>
+  정규화 되지 않은 테이블은, 갱신 이상, 삽입 이상, 삭제 이상 등의 문제가 있습니다. <br>
+  정규화를 통해, Data Reduncamcy를 제거하며, <br>
+  데이터 저장을 논리적으로, 의미있게(informative) 할 수 있는 장점이 있습니다.  <br>
+  또한 데이터베이스 구조 확장 시에 구조 변경을 최소화 할 수 있습니다.  <br>
+  <br>
+  1NF, 1차 정규형의 핵심은, 각 Row마다 Column의 값이 1개씩만 있어야 합니다. (Atomic Value)<br>
+  원칙적으로는 "어떤 관계와 동일 구조"임을 뜻하며, 아래의 조건이 있습니다.<br>
+  1. 모든 Column(attribute)는 각 Table에서 Unique하다. <br>
+  2. 모든 entry는 하나의 값을 가져야 하며, Atomic해야 한다. <br>
+  3. 중복되는 Row가 없다.<br>
+  <br>
+  2NF, 2차 정규형의 핵심은, 부분적 종속이 없어야 합니다. (완전 함수 종속)<br>
+  즉, Candidate Key와 K와, K에 속하지 않은 Attirbute A가 있을 때, <br>
+  A를 결정하기 위해 K일부로 결정되지 않고, K전체를 참조해야 하는 경우,<br>
+  1NF인 테이블은 2NF의 필요충분조건을 만족합니다. <br>
+  <br>
+  3NF, 3차 정규형의 핵심은 테이블 내의 모든 속성이 기본 키에만 의존해야 합니다. <br>
+  (이행적 함수 종속 없음)<br>
+  이행적 함수 종속이란 A -> B, B -> C  ==> A -> C 를 의미합니다. <br>
+  <br>
+  BCNF 정규화의 핵심은 모든 결정자가 후보 키가 되는 것입니다. <br>
+  즉, 어떤 컬럼이 다른 컬럼의 값을 결정하는 결정자인데 Candidate Key가 아니라면,<br>
+  BCNF 정규화를 만족시키기 위해 분해해야 합니다. <br>
+  </br>
+</details>
 
-  2NF, 2차 정규형의 핵심은, 부분적 종속이 없어야 합니다. (완전 함수 종속)
-  즉, Candidate Key와 K와, K에 속하지 않은 Attirbute A가 있을 때, 
-  A를 결정하기 위해 K일부로 결정되지 않고, K전체를 참조해야 하는 경우,
-  1NF인 테이블은 2NF의 필요충분조건을 만족합니다. 
+<details>
+  <summary>Partitioning과 Sharding에 대해서 설명해 보세요.</summary>
+  </br>
+  파티셔닝은, Perfomance, Manageability, Availability를 향상시키기 위해<br>
+  테이블/인덱스를 분리하는 방법입니다. <br>
+  <br>
+  파티셔닝 방법은 크게 두가지로 볼 수 있습니다.<br>
+  Horizontal Partitioning은, 동일한 스키마의 데이터를 여러개의 테이블에<br>
+  나누어 저장하는 것을 뜻합니다. Row기반으로 데이터를 분리합니다. <br>
+  Vertical Partitioning은, 하나의 Entity에 저장된 데이터를 여러개의 엔티티로<br>
+  분리하는것을 뜻합니다. Column기반으로 데이터를 분리합니다. <br>
+  <br>
+  Range Partitioning은, 연속적인 숫자 등을 기준으로 파티셔닝 하는 방식입니다. <br>
+  Hash Partitioning은, 각 파티션마다 해시값의 범위를 할당하는 방식입니다. <br>
+  범위 Query를 효율적으로 실행이 불가능하다는 단점이 있습니다. <br>
+  추가적으로 보조 색인이 존재하는 DB라면 다음의 파티셔닝 방식을 사용합니다.<br>
+  Document-based partitioning(Local index)의 경우, <br>
+  각 파티션마다 index를 둡니다.<br>
+  Term-based partitioning(Global index)의 경우, <br>
+  모든 파티션의 데이터를 담당하는 index를 만들고, global index또한 파티셔닝합니다. <br>
+  Global index의 갱신은 보편적으로 비동기적으로 이루어집니다. <br>
+  <br>
+  샤딩은, Horizontal Partitioning을 뜻하기도 하고, <br>
+  그중에서도 물리적인 형태로 파티셔닝 하는 것만을 뜻하기도 합니다. <br>
+  </br>
+</details>
+
+<details>
+  <summary>Consistent Hashing에 대해서 설명해 보세요.</summary>
+  </br>
   
-  3NF, 3차 정규형의 핵심은 테이블 내의 모든 속성이 기본 키에만 의존해야 합니다. 
-  (이행적 함수 종속 없음)
-  이행적 함수 종속이란 A -> B, B -> C  ==> A -> C 를 의미합니다. 
-  
-  BCNF 정규화의 핵심은 모든 결정자가 후보 키가 되는 것입니다. 
-  즉, 어떤 컬럼이 다른 컬럼의 값을 결정하는 결정자인데 Candidate Key가 아니라면,
-  BCNF 정규화를 만족시키기 위해 분해해야 합니다. 
   </br>
 </details>
 
@@ -154,12 +188,8 @@ CS인터뷰를 준비하는데 도움이 되기를 바랍니다.
   </br>
 </details>
 
-<details>
-  <summary>Sharding과 Partitioning에 대해서 설명해 보세요.</summary>
-  </br>
-  
-  </br>
-</details>
+
+
 
 ## 네트워크
 <details>
