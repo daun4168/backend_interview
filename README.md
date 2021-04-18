@@ -392,7 +392,25 @@ CS인터뷰를 준비하는데 도움이 되기를 바랍니다.
   <summary>RESTful 대해서 설명해 보세요.</summary>
   </br>
    REST란 Representational State Transfer의 약자입니다. <br>
-   
+   REST API는 URI, HTTP Method, Representation으로 이루어져 있습니다.<br>
+   URI는, Resource를 뜻하는 것으로 명사적으로 구성되는 것이 좋습니다.<br>
+   HTTP Method는, Verb를 뜻하는 것으로 GET, POST, PUT, DELETE등이 있습니다.<br>
+   각 메소드는 CRUD에 대응되며, 그에 맞는 동작을 하도록 구성하는 것이 좋습니다. <br>
+   Representation은 응답을 뜻합니다. Json을 주로 사용하나, XML, TEXT등도 사용가능합니다.<br>
+   <br>
+   REST의 특징으로는 6가지의 제한 조건이 있습니다. <br>
+   1. Uniform Interface는, Resource에 대한 조작을 통일된 인터페이스로 수행가능해야 합니다.<br>
+   HTTP를 따르는 모든 플랫폼에서 사용이 가능해야 하고, 특정 언어나 플랫폼에 종속되지 않습니다.<br>
+   또한, 메세지의 내용을 읽는 것으로 무슨 요청을 판단하는지 사람이 쉽게 알 수 있습니다. <br>
+   2. Stateless는, 클라이언트의 상태를 서버가 유지하지 않는다는 것을 의미합니다.<br>
+   세션, 쿠키 등을 별도로 관리하지 않아, 자유도가 높아지고 구현이 단순해집니다.<br>
+   3. Cacheable은, HTTP를 사용하는 덕분에 HTTP의 해싱 기능이 사용가능하다는 점입니다.<br>
+   4. Layered System은, REST서버가 여러 계층으로 구성될 수 있다는 점입니다. <br>
+   로드밸런싱, SSL등을 하는 계층을 추가할 수 있습니다. <br>
+   5. Client-server architecture는, 클라이언트와 서버가 분리되어 의존성이 줄어든다는 점입니다.<br>
+   실질적으로 Backend와 Frontend의 개발의 분리가 쉬워질 수 있습니다. <br>
+   6. Code on demand(Optional)는, Server로부터 스크립트를 받아서 클라이언트에서 JS등으로<br>
+   실행이 가능하다는 점입니다. <br>
   </br>
 </details>
 
