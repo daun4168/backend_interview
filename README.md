@@ -36,7 +36,7 @@ CS인터뷰를 준비하는데 도움이 되기를 바랍니다.
   RDB는 데이터 구조가 명확하고 변경 될 여지가 없고, <br> 
   데이터 무결성에 대한 보장이 필요한 시스템에서 사용하는 것이 좋습니다. <br>
   또한, 관계를 맺고 있는 데이터가 자주 Update가 일어나는 경우에 적합합니다. <br>
-  NOSQL은 데이터 구조를 잘 알 수 없고, 
+  NOSQL은 데이터 구조를 잘 알 수 없고, <br>
   데이터의 구조의 변경이 일어날 수 있는 경우에 사용하는  것이 좋습니다. <br>
   또한 데이터의 양이 많지만 Update가 많이 이루어지지 않는 시스템에 사용하는 것이 좋습니다. <br>
   </br>
@@ -180,7 +180,29 @@ CS인터뷰를 준비하는데 도움이 되기를 바랍니다.
 <details>
   <summary>Consistent Hashing에 대해서 설명해 보세요.</summary>
   </br>
+  Hash Ring을 사용해서 해싱을 하는 방법입니다. 
+  메타정보 조회 없이 클러스터에서 키가 저장된 노드를 바로 찾아갈 수 있습니다.
+  Rebalancing문제를 해결하기 위한 방법입니다. 
+  Virtual Node는, 실제 물리 노드보다 토큰을 더 많이 보유하는 방식입니다.
+  이를 통해, Object분포의 불균일성을 해결합니다. 
   
+  
+  
+  일반 HashTable을 사용하면, 분산 DB에서 node를 추가하거나 삭제하는데
+  O(K)의 시간이 걸립니다. (K는 Key의 수) Coninstent Hashing을 사용하면
+  O(K/N)의 시간으로 가능합니다. 단, Key를 추가하거나 삭제할 때, 
+  일반적인 HashTable은 O(1)이면 가능하지만, Consistent Hashing의 경우
+  O(logN)의 시간이 걸립니다. (N은 Node의 수)
+  
+  DynamoDB, Memcached와 같은 NOSQL에 주로 사용되고 있습니다. 
+  </br>
+</details>
+
+<details>
+  <summary>DHT에 대해서 설명해 보세요.</summary>
+  </br>
+  Distributeed Hash Table
+  Cassandra, BitTorrent
   </br>
 </details>
 
@@ -194,7 +216,8 @@ CS인터뷰를 준비하는데 도움이 되기를 바랍니다.
 <details>
   <summary>분산형 데이터베이스의 CAP에 대해서 설명해 보세요.</summary>
   </br>
-  
+  Database가 Consistency, Availability, Partitioning를 모두 만족할 수 없고, 
+  둘만 만족할 수 있다는  것입니다. 
   </br>
 </details>
 
@@ -280,7 +303,7 @@ CS인터뷰를 준비하는데 도움이 되기를 바랍니다.
 </details>
 
 <details>
-  <summary>라우터와 게이트웨이의 특징을 설명해 보세요.</summary>
+  <summary>Router와 Gateway의 특징을 설명해 보세요.</summary>
   </br>
   라우터는 OSI 7 Layer 중, Network Layer에서 동작하는 장비입니다. <br>
   Subnet이 다른 장비간을 연결 할 떄 사용합니다. <br>
@@ -294,7 +317,7 @@ CS인터뷰를 준비하는데 도움이 되기를 바랍니다.
 </details>
 
 <details>
-  <summary>스위치의 동작 방식을 설명해 보세요.</summary>
+  <summary>Switch의 동작 방식을 설명해 보세요.</summary>
   </br>
   스위치는 OSI 7 Layer 중, Data Link Layer에서 동작하는 장비입니다. <br>
   Mac Address가 기록된 테이블을 가지고 있어,  <br>
@@ -509,35 +532,35 @@ CS인터뷰를 준비하는데 도움이 되기를 바랍니다.
 </details>
 
 <details>
-  <summary>페이징과 세그멘테이션에 대해서 설명해 보세요.</summary>
+  <summary>Paging과 Segmentation에 대해서 설명해 보세요.</summary>
   </br>
 
   </br>
 </details>
 
 <details>
-  <summary>Blocking과 Nonblocking의 특징에 대해서 설명해 보세요 .</summary>
+  <summary>Blocking과 Nonblocking의 특징에 대해서 설명해 보세요.</summary>
   </br>
 
   </br>
 </details>
 
 <details>
-  <summary>Synchronous와 Asynchronous의 특징에 대해서 설명해 보세요 .</summary>
+  <summary>Synchronous와 Asynchronous의 특징에 대해서 설명해 보세요.</summary>
   </br>
 
   </br>
 </details>
 
 <details>
-  <summary>프로그램의 메모리 영역에 대해서 설명해 보세요 .</summary>
+  <summaryMemory Structure에 대해서 설명해 보세요.</summary>
   </br>
-
+  Code, Data, Stack, Heap
   </br>
 </details>
 
 <details>
-/  <summary>리눅스 커널에 대해서 설명해 보세요 .</summary>
+  <summary>리눅스 커널에 대해서 설명해 보세요.</summary>
   </br>
 
   </br>
@@ -547,16 +570,63 @@ CS인터뷰를 준비하는데 도움이 되기를 바랍니다.
 ## 자료구조와 알고리즘
 
 <details>
-  <summary>B+Tree의 특징에 대해서 설명해 보세요 .</summary>
+  <summary>LSH에 대해서 설명해 보세요.</summary>
+  </br>
+  Jaccard 유사도 J(A, B) = |A∪B|/|A∪B| </br>
+  min-hash </br>
+  Rabin fingerprint </br>
+  Locality Senesitive Hashing </br>
+  </br>
+</details>
+
+<details>
+  <summary>B+Tree에 대해서 설명해 보세요.</summary>
+  </br>
+  
+  </br>
+</details>
+
+<details>
+  <summary>LSM Tree에 대해서 설명해 보세요.</summary>
+  </br>
+  Log-Structured Merge Tree
+  </br>
+</details>
+
+<details>
+  <summary>Dijkstra Algorithm에 대해서 설명해 보세요.</summary>
   </br>
 
   </br>
 </details>
 
 <details>
-  <summary>Red Black Tree의 특징에 대해서 설명해 보세요 .</summary>
+  <summary>A* Algorithm에 대해서 설명해 보세요.</summary>
   </br>
 
+  </br>
+</details>
+
+<details>
+  <summary>Huffman Coding에 대해서 설명해 보세요.</summary>
+  </br>
+
+  </br>
+</details>
+
+<details>
+  <summary>Red Black Tree에 대해서 설명해 보세요.</summary>
+  </br>
+
+  </br>
+</details>
+
+<details>
+  <summary>Hash Collision을 처리하는 방법을 설명해 보세요.</summary>
+  </br>
+  1. Sepearate Chaning는, Linked List로 해시 충돌을 처리한다. </br>
+  2. Open Addressing은, Liniear Probing, Double Hashing등을 사용해서</br>
+  다른 버켓에 담는 것으로 해시 충돌을 처리한다.</br>
   </br>
 </details>
 
@@ -564,63 +634,63 @@ CS인터뷰를 준비하는데 도움이 되기를 바랍니다.
 ## 컴퓨터 보안
 
 <details>
-  <summary>SQL Injection에 대해서 설명해 보세요 .</summary>
+  <summary>SQL Injection에 대해서 설명해 보세요.</summary>
   </br>
 
   </br>
 </details>
 
 <details>
-  <summary>XSS에 대해서 설명해 보세요 .</summary>
+  <summary>XSS에 대해서 설명해 보세요.</summary>
   </br>
 
   </br>
 </details>
 
 <details>
-  <summary>CSRF에 대해서 설명해 보세요 .</summary>
+  <summary>CSRF에 대해서 설명해 보세요.</summary>
   </br>
 
   </br>
 </details>
 
 <details>
-  <summary>ARP spoofing에 대해서 설명해 보세요 .</summary>
+  <summary>ARP spoofing에 대해서 설명해 보세요.</summary>
   </br>
 
   </br>
 </details>
 
 <details>
-  <summary>DNS spoofing에 대해서 설명해 보세요 .</summary>
+  <summary>DNS spoofing에 대해서 설명해 보세요.</summary>
   </br>
 
   </br>
 </details>
 
 <details>
-  <summary>DDoS, DRDos에 대해서 설명해 보세요 .</summary>
+  <summary>DDoS, DRDos에 대해서 설명해 보세요.</summary>
   </br>
 
   </br>
 </details>
 
 <details>
-  <summary>RSA에 대해서 설명해 보세요 .</summary>
+  <summary>RSA에 대해서 설명해 보세요.</summary>
   </br>
 
   </br>
 </details>
 
 <details>
-  <summary>Diffie–Hellman key exchange에 대해서 설명해 보세요 .</summary>
+  <summary>Diffie–Hellman key exchange에 대해서 설명해 보세요.</summary>
   </br>
 
   </br>
 </details>
 
 <details>
-  <summary>OAuth에 대해서 설명해 보세요 .</summary>
+  <summary>OAuth에 대해서 설명해 보세요.</summary>
   </br>
 
   </br>
@@ -630,56 +700,56 @@ CS인터뷰를 준비하는데 도움이 되기를 바랍니다.
 ## 프로그래밍 언어
 
 <details>
-  <summary>Singleton Pattern에 대해서 설명해 보세요 .</summary>
+  <summary>Singleton Pattern에 대해서 설명해 보세요.</summary>
   </br>
 
   </br>
 </details>
 
 <details>
-  <summary>Java의 Overriding과 Overloading에 대해서 설명해 보세요 .</summary>
+  <summary>Java의 Overriding과 Overloading에 대해서 설명해 보세요.</summary>
   </br>
 
   </br>
 </details>
 
 <details>
-  <summary>Java의 JVM에 대해서 설명해 보세요 .</summary>
+  <summary>Java의 JVM에 대해서 설명해 보세요.</summary>
   </br>
 
   </br>
 </details>
 
 <details>
-  <summary>Java의 Generic에 대해서 설명해 보세요 .</summary>
+  <summary>Java의 Generic에 대해서 설명해 보세요.</summary>
   </br>
 
   </br>
 </details>
 
 <details>
-  <summary>Python의 GIL에 대해서 설명해 보세요 .</summary>
+  <summary>Python의 GIL에 대해서 설명해 보세요.</summary>
   </br>
 
   </br>
 </details>
 
 <details>
-  <summary>Garbage Collection에 대해서 설명해 보세요 .</summary>
+  <summary>Garbage Collection에 대해서 설명해 보세요.</summary>
   </br>
 
   </br>
 </details>
 
 <details>
-  <summary>MVC Pattern에 대해서 설명해 보세요 .</summary>
+  <summary>MVC Pattern에 대해서 설명해 보세요.</summary>
   </br>
 
   </br>
 </details>
 
 <details>
-  <summary>JS의 Callback과 Closure에 대해서 설명해 보세요 .</summary>
+  <summary>JS의 Callback과 Closure에 대해서 설명해 보세요.</summary>
   </br>
 
   </br>
@@ -688,35 +758,35 @@ CS인터뷰를 준비하는데 도움이 되기를 바랍니다.
 
 ## 기타
 <details>
-  <summary>Docker에 대해서 설명해 보세요 .</summary>
+  <summary>Docker에 대해서 설명해 보세요.</summary>
   </br>
 
   </br>
 </details>
 
 <details>
-  <summary>Kubernates에 대해서 설명해 보세요 .</summary>
+  <summary>Kubernates에 대해서 설명해 보세요.</summary>
   </br>
 
   </br>
 </details>
 
 <details>
-  <summary>TDD에 대해서 설명해 보세요 .</summary>
+  <summary>TDD에 대해서 설명해 보세요.</summary>
   </br>
 
   </br>
 </details>
 
 <details>
-  <summary>CI/CD에 대해서 설명해 보세요 .</summary>
+  <summary>CI/CD에 대해서 설명해 보세요.</summary>
   </br>
 
   </br>
 </details>
 
 <details>
-  <summary>Git에 대해서 설명해 보세요 .</summary>
+  <summary>Git에 대해서 설명해 보세요.</summary>
   </br>
 
   </br>
@@ -737,6 +807,8 @@ CS인터뷰를 준비하는데 도움이 되기를 바랍니다.
 [우아한형제들 기술 블로그](https://woowabros.github.io/)
 
 [NHN 기술 블로그](https://meetup.toast.com/)
+
+[삼성 S/W Membership](http://www.secmem.org/)
 
 [나무위키](https://namu.wiki/)
 
