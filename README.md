@@ -180,21 +180,19 @@ CS인터뷰를 준비하는데 도움이 되기를 바랍니다.
 <details>
   <summary>Consistent Hashing에 대해서 설명해 보세요.</summary>
   </br>
-  Hash Ring을 사용해서 해싱을 하는 방법입니다. 
-  메타정보 조회 없이 클러스터에서 키가 저장된 노드를 바로 찾아갈 수 있습니다.
-  Rebalancing문제를 해결하기 위한 방법입니다. 
-  Virtual Node는, 실제 물리 노드보다 토큰을 더 많이 보유하는 방식입니다.
-  이를 통해, Object분포의 불균일성을 해결합니다. 
-  
-  
-  
-  일반 HashTable을 사용하면, 분산 DB에서 node를 추가하거나 삭제하는데
-  O(K)의 시간이 걸립니다. (K는 Key의 수) Coninstent Hashing을 사용하면
-  O(K/N)의 시간으로 가능합니다. 단, Key를 추가하거나 삭제할 때, 
-  일반적인 HashTable은 O(1)이면 가능하지만, Consistent Hashing의 경우
-  O(logN)의 시간이 걸립니다. (N은 Node의 수)
-  
-  DynamoDB, Memcached와 같은 NOSQL에 주로 사용되고 있습니다. 
+  Hash Ring을 사용해서 해싱을 하는 방법입니다. <br>
+  메타정보 조회 없이 클러스터에서 키가 저장된 노드를 바로 찾아갈 수 있습니다.<br>
+  Rebalancing문제를 해결하기 위한 방법입니다. <br>
+  Virtual Node는, 실제 물리 노드보다 토큰을 더 많이 보유하는 방식입니다.<br>
+  이를 통해, Object분포의 불균일성을 해결합니다. <br>
+  <br>
+  일반 HashTable을 사용하면, 분산 DB에서 node를 추가하거나 삭제하는데<br>
+  O(K)의 시간이 걸립니다. (K는 Key의 수) Coninstent Hashing을 사용하면<br>
+  O(K/N)의 시간으로 가능합니다. 단, Key를 추가하거나 삭제할 때, <br>
+  일반적인 HashTable은 O(1)이면 가능하지만, Consistent Hashing의 경우<br>
+  O(logN)의 시간이 걸립니다. (N은 Node의 수)<br>
+  <br>
+  DynamoDB, Memcached와 같은 NOSQL에 주로 사용되고 있습니다. <br>
   </br>
 </details>
 
@@ -460,7 +458,13 @@ CS인터뷰를 준비하는데 도움이 되기를 바랍니다.
 <details>
   <summary>OSI 7 Layer와 TCP/IP의 차이에 대해서 설명해 보세요.</summary>
   </br>
-
+  Application Layer
+  Presentation Layer
+  Session Layer
+  Transport Layer
+  Network Layer
+  Datalink Layer: Frames / 주소할당/오류감지 MAC address / ex)Ethernet
+  Physical Layer: 하드웨어
   </br>
 </details>
 
@@ -492,6 +496,12 @@ CS인터뷰를 준비하는데 도움이 되기를 바랍니다.
   </br>
 </details>
 
+<details>
+  <summary>Flow Control과 Congestion Control에 대해서 설명해 보세요.</summary>
+  </br>
+
+  </br>
+</details>
 
 
 ## 운영체제
@@ -548,7 +558,8 @@ CS인터뷰를 준비하는데 도움이 되기를 바랍니다.
 <details>
   <summary>Synchronous와 Asynchronous의 특징에 대해서 설명해 보세요.</summary>
   </br>
-
+  동기 작업은, 작업을 동시에 수행하거나, 끝나거나, 끝나는 동시에 시작하는 것을 의미합니다.
+  비동기 작업은, 상대방과 관계 없이 수행합니다. 
   </br>
 </details>
 
